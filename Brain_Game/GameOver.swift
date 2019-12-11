@@ -29,4 +29,7 @@ class gameOverController: UIViewController {
     
     scoreLabel.text = String(highScore)+" points"
 }
+    
+    @IBAction func playAgain(_ sender: Any) {
+    }
 }

@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     "blue": .blue,
     "black": .black,
     "gray": .gray,
-    "white": .white,
+    "white": .white
     ]
     @IBAction func yesButtonAction(_ sender: Any) {
         if(colors[currentText] == currentColor){
@@ -45,14 +45,20 @@ class ViewController: UIViewController {
         else {
             self.check(winOrLose: false)
             }
-            refreshGame()
         }
     var currentColor: UIColor = UIColor.white
     var currentText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshGame()
+        
+    }
+    @IBAction func noButtonAction(_ sender: Any) { if(colors[currentText] != currentColor){
+        self.check(winOrLose: true)
+        }
+    else {
+        self.check(winOrLose: false)
+        }
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,7 +67,27 @@ class ViewController: UIViewController {
                     gameOverController.highScore = self.highScore
                     gameOverController.message = self.message
     }
-
+    func refreshGame(){
+        currentText = colors.randomElement()!.key
+        currentColor = colors.randomElement()!.value
+        let randomColor = colors.randomElement()?.key
+                
+        meaningLabel.text = randomColor
+        colortextLabel.text = currentText
+        meaningLabel.textColor = currentColor
+                
+                
+            if (score <= -1) {
+                score = 0
+                scoreLabel.text = "HighScore   "+String(highScore)+""
+                self.timerCount = 0
+                performSegue(withIdentifier: "showEndGame", sender: self)
+                    
+            } else {
+                scoreLabel.text = "Score  "+String(score)+""
+                }
+            }
+            
     func setupScene() {
         meaningLabel.layer.masksToBounds = true
         colortextLabel.layer.masksToBounds = true
@@ -92,50 +118,11 @@ class ViewController: UIViewController {
         if self.timerCount < 5 {
             self.messageLabel.text = ""
             self.messageLabel.font = UIFont.systemFont(ofSize: 35)
-            self.animate(time: "0:0"+String(self.timerCount))
             self.messageLabel.textColor = self.colors.randomElement()?.value
         }
     }
 }
 
-    func animate(time: String, color:UIColor = .white) {
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-        self.messageLabel.alpha = 0.0
-        }, completion: {
-            (finished: Bool) -> Void in
-
-            if ((color == .green) || (color == .red)){
-                self.messageLabel.textColor = color
-            }
-            self.messageLabel.text = time
-
-            // Fade in
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-                self.messageLabel.alpha = 1.0
-                }, completion: nil)
-    })
-}
-
-func refreshGame(){
-    currentText = colors.randomElement()!.key
-    currentColor = colors.randomElement()!.value
-    let randomColor = colors.randomElement()?.key
-    
-    meaningLabel.text = randomColor
-    colortextLabel.text = currentText
-    meaningLabel.textColor = currentColor
-    
-    
-    if (score <= -1) {
-        score = 0
-        scoreLabel.text = "HighScore   "+String(highScore)+""
-        self.timerCount = 0
-        performSegue(withIdentifier: "showEndGame", sender: self)
-        
-    } else {
-        scoreLabel.text = "Score  "+String(score)+""
-    }
-}
     }
     
 }
@@ -155,8 +142,6 @@ func check(winOrLose:Bool) {
             messageStr = "Wrong! -20"
         }
         
-
-        self.animate(time: messageStr, color: color)
     }
 }
 

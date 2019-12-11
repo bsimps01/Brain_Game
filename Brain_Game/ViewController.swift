@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     var timerCount: Int = 5
     var message: String = "Game Over"
     
-    let colors: [String: UIColor] = ["red": .red,
+    let colors: [String: UIColor] = [
+        "red": .red,
     "green": .green,
     "yellow": .yellow,
     "purple": .purple,
@@ -45,12 +46,15 @@ class ViewController: UIViewController {
         else {
             self.check(winOrLose: false)
             }
+        refreshGame()
         }
     var currentColor: UIColor = UIColor.white
     var currentText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshGame()
+        
         
     }
     @IBAction func noButtonAction(_ sender: Any) { if(colors[currentText] != currentColor){
@@ -59,34 +63,14 @@ class ViewController: UIViewController {
     else {
         self.check(winOrLose: false)
         }
-        
+        refreshGame()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showEndGame" {
+        if segue.identifier == "showGameOver" {
             if let gameOverController = segue.destination as? gameOverController {
                     gameOverController.highScore = self.highScore
                     gameOverController.message = self.message
     }
-    func refreshGame(){
-        currentText = colors.randomElement()!.key
-        currentColor = colors.randomElement()!.value
-        let randomColor = colors.randomElement()?.key
-                
-        meaningLabel.text = randomColor
-        colortextLabel.text = currentText
-        meaningLabel.textColor = currentColor
-                
-                
-            if (score <= -1) {
-                score = 0
-                scoreLabel.text = "HighScore   "+String(highScore)+""
-                self.timerCount = 0
-                performSegue(withIdentifier: "showEndGame", sender: self)
-                    
-            } else {
-                scoreLabel.text = "Score  "+String(score)+""
-                }
-            }
             
     func setupScene() {
         meaningLabel.layer.masksToBounds = true
@@ -126,7 +110,7 @@ class ViewController: UIViewController {
     }
     
 }
-func check(winOrLose:Bool) {
+    func check(winOrLose:Bool) {
         var color:UIColor = .white
         var messageStr:String = ""
         
@@ -139,9 +123,29 @@ func check(winOrLose:Bool) {
         else {
             self.score -= 20
             color = .red
-            messageStr = "Wrong! -20"
+            messageStr = "Wrong! -10"
         }
         
     }
+    func refreshGame(){
+        currentText = colors.randomElement()!.key
+        currentColor = colors.randomElement()!.value
+        let randomColor = colors.randomElement()?.key
+                
+        meaningLabel.text = randomColor
+        colortextLabel.text = currentText
+        meaningLabel.textColor = currentColor
+                
+                
+            if (score <= -1) {
+                score = 0
+                scoreLabel.text = "HighScore   "+String(highScore)+""
+                self.timerCount = 0
+                performSegue(withIdentifier: "showGameOver", sender: self)
+                    
+            } else {
+                scoreLabel.text = "Score  "+String(score)+""
+                }
+            }
 }
 

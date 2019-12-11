@@ -135,7 +135,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyo-Wj-S9m">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyo-Wj-S9m" userLabel="colortext Label">
                                 <rect key="frame" x="89" y="405" width="237" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -190,6 +190,7 @@
                         <outlet property="scoreLabel" destination="xxp-y6-nu1" id="Bft-tV-gq6"/>
                         <outlet property="timerLabel" destination="PQe-fA-fB7" id="Uv3-vy-eBa"/>
                         <outlet property="yesButton" destination="ibY-Qv-hDf" id="pZV-p9-4fT"/>
+                        <segue destination="F2u-qs-U9o" kind="show" id="EaR-eN-ePf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKz-SF-2rU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -266,6 +267,7 @@
                         <color key="backgroundColor" red="0.15084216" green="0.32146608830000001" blue="0.4823721051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="1tb-uM-bd1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qWD-3o-On3"/>
                     <connections>
                         <outlet property="highScoreLabel" destination="uhg-Du-glK" id="eS2-qz-SUH"/>
                         <outlet property="playAgainButton" destination="m1K-Q5-TI4" id="0IM-74-hfm"/>

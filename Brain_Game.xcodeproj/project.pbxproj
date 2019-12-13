@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B46767E239F82A700B9CCC7 /* Brain_Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brain_Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B46767E239F82A700B9CCC7 /* Brain Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brain Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B467681239F82A700B9CCC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B467683239F82A700B9CCC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1B467685239F82A700B9CCC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		1B46767F239F82A700B9CCC7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B46767E239F82A700B9CCC7 /* Brain_Game.app */,
+				1B46767E239F82A700B9CCC7 /* Brain Game.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 			);
 			name = Brain_Game;
 			productName = Brain_Game;
-			productReference = 1B46767E239F82A700B9CCC7 /* Brain_Game.app */;
+			productReference = 1B46767E239F82A700B9CCC7 /* Brain Game.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -304,7 +304,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Brain-Game";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Brain Game";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -322,7 +322,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Brain-Game";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Brain Game";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

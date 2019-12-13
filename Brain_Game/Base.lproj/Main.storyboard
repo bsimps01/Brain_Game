@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="APJ-2y-Nvf">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxp-y6-nu1">
-                                <rect key="frame" x="33" y="70" width="83" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQe-fA-fB7">
+                                <rect key="frame" x="216" y="66" width="106" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -87,12 +87,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <state key="normal" title="No"/>
                                 <connections>
-                                    <action selector="noButtonAction:" destination="CEx-rc-FNx" eventType="touchUpInside" id="Ne5-ce-wUX"/>
                                     <action selector="noButtonTapped:" destination="CEx-rc-FNx" eventType="touchUpInside" id="XyC-wH-OW6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQe-fA-fB7">
-                                <rect key="frame" x="216" y="66" width="106" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxp-y6-nu1">
+                                <rect key="frame" x="34" y="74" width="83" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -108,8 +107,7 @@
                         <outlet property="meaningLabel" destination="xRv-XW-NAg" id="nng-eZ-4Nl"/>
                         <outlet property="messageLabel" destination="Q7y-5L-CDr" id="Gjv-gS-zlw"/>
                         <outlet property="noButton" destination="J5N-h8-Fx6" id="0nI-BC-Wrz"/>
-                        <outlet property="sceneView" destination="Odu-gI-GYi" id="LWe-KL-YWD"/>
-                        <outlet property="scoreLabel" destination="xxp-y6-nu1" id="Bft-tV-gq6"/>
+                        <outlet property="scoreLabel" destination="xxp-y6-nu1" id="plc-CB-Ctw"/>
                         <outlet property="timerLabel" destination="PQe-fA-fB7" id="Uv3-vy-eBa"/>
                         <outlet property="yesButton" destination="ibY-Qv-hDf" id="pZV-p9-4fT"/>
                         <segue destination="F2u-qs-U9o" kind="show" id="EaR-eN-ePf"/>

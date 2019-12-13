@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         
     @IBAction func yesButtonAction(_ sender: Any) {
         if matching{
-                self.score+=10
+                self.score += 10
                 scoreLabel.text = String(self.score)
                 randomizer()
         } else {
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
 
     @IBAction func noButtonTapped(_ sender: Any) {
          if matching{
-                self.score+=10
+                self.score += 10
                 scoreLabel.text = String(self.score)
                 randomizer()
         } else {

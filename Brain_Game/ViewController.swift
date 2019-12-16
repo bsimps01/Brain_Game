@@ -22,13 +22,14 @@ class ViewController: UIViewController {
  
     struct color{
         let textColor = ["Red", "Blue", "Green", "Yellow", "Purple", "Orange"]
+        
         let colors = ["Red":UIColor.red, "Blue":UIColor.blue, "Green":UIColor.green, "Yellow":UIColor.yellow, "Purple":UIColor.purple, "Orange":UIColor.orange]
     }
     
     var score = 0
     var gamePlay = false
     var gameOver = false
-    var seconds = 15
+    var seconds = 60
     var timer: Timer?
     var matching: Bool = true
     
@@ -43,18 +44,20 @@ class ViewController: UIViewController {
         if seconds <= 0 {
             timer?.invalidate()
             timer = nil
+            performSegue(withIdentifier: "Game Over", sender: self)
         }
     }
-    func randomizer(){
+        
+    func game(){
         let colorChoices = color()
         let textWord = colorChoices.textColor.randomElement()
         let matchColor = colorChoices.textColor.randomElement()
         let matchText =  colorChoices.textColor.randomElement()
         
         if textWord == matchColor{
-            self.matching = true
+            matching = true
         } else {
-            self.matching = false
+            matching = false
         }
 
         meaningLabel.text = textWord
@@ -64,28 +67,28 @@ class ViewController: UIViewController {
         
         
     @IBAction func yesButtonAction(_ sender: Any) {
-        if matching{
-                self.score += 10
-                scoreLabel.text = String(self.score)
-                randomizer()
-        } else {
-                self.score -= 10
-                scoreLabel.text = String(self.score)
-                randomizer()
+        if matching {
+                score += 10
+                scoreLabel.text = "Score: \(score)"
+                game()
+        } else if matching == false {
+                score -= 10
+                scoreLabel.text = "Score: \(score)"
+                game()
             }
         }
     
     
 
     @IBAction func noButtonTapped(_ sender: Any) {
-         if matching{
-                self.score += 10
-                scoreLabel.text = String(self.score)
-                randomizer()
-        } else {
-                self.score -= 10
-                scoreLabel.text = String(self.score)
-                randomizer()
+         if matching {
+                score += 10
+                scoreLabel.text = "Score: \(score)"
+                game()
+        } else if matching == false {
+                score -= 10
+                scoreLabel.text = "Score: \(score)"
+                game()
                     }
                 }
     
@@ -95,7 +98,7 @@ class ViewController: UIViewController {
     }
         override func viewDidLoad() {
             super.viewDidLoad()
-            randomizer()
+            game()
             runTimer()
         }
 

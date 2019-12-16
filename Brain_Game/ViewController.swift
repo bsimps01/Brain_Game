@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var colortextLabel: UILabel!
  
     struct color{
-        let textColor = ["Red", "Blue", "Green", "Yellow", "Purple", "Orange"]
+        let textColor: [String] = ["Red", "Blue", "Green", "Yellow", "Purple", "Orange"]
         
         let colors = ["Red":UIColor.red, "Blue":UIColor.blue, "Green":UIColor.green, "Yellow":UIColor.yellow, "Purple":UIColor.purple, "Orange":UIColor.orange]
     }
@@ -41,57 +41,71 @@ class ViewController: UIViewController {
         if seconds > 0 {
             seconds -= 1
         }
-        if seconds <= 0 {
+        if seconds == 0 {
+            self.seconds = 0
             timer?.invalidate()
             timer = nil
             performSegue(withIdentifier: "Game Over", sender: self)
         }
     }
         
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Game Over" {
+            if let GameOver = segue.destination as? gameOverController {
+                    GameOver.highScore = self.score
+            }
+        }
+    }
+    
     func game(){
         let colorChoices = color()
         let textWord = colorChoices.textColor.randomElement()
         let matchColor = colorChoices.textColor.randomElement()
         let matchText =  colorChoices.textColor.randomElement()
-        
-        if matchText == matchColor{
-            matching = true
-        } else {
-            matching = false
-        }
 
         meaningLabel.text = textWord
-        colortextLabel.textColor = colorChoices.colors[matchColor!]
         colortextLabel.text = matchText
+        colortextLabel.textColor = colorChoices.colors[matchColor!]
+        
+        if matchText == matchColor && textWord == matchColor{
+            matching = true
+            
+        } else {
+            matching = false
+            
+        }
+        
+        if (score <= -10){
+            score = 0
+            performSegue(withIdentifier: "Game Over", sender: self)
+        }
     }
         
         
     @IBAction func yesButtonAction(_ sender: Any) {
-        if matching {
-                score += 10
-                scoreLabel.text = "Score: \(score)"
+        if matching == true {
+            score += 10
+            scoreLabel.text = "Score: \(score)"
                 game()
         } else if matching == false {
-                score -= 10
-                scoreLabel.text = "Score: \(score)"
+            score -= 10
+            scoreLabel.text = "Score: \(score)"
                 game()
             }
         }
     
-    
 
     @IBAction func noButtonTapped(_ sender: Any) {
-         if matching {
-                score += 10
-                scoreLabel.text = "Score: \(score)"
+         if matching == true{
+            score += 10
+            scoreLabel.text = "Score: \(score)"
                 game()
         } else if matching == false {
-                score -= 10
-                scoreLabel.text = "Score: \(score)"
+            score -= 10
+            scoreLabel.text = "Score: \(score)"
                 game()
                     }
                 }
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

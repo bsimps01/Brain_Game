@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         let matchColor = colorChoices.textColor.randomElement()
         let matchText =  colorChoices.textColor.randomElement()
         
-        if textWord == matchColor{
+        if matchText == matchColor{
             matching = true
         } else {
             matching = false

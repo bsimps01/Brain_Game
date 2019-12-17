@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "Game Over", sender: self)
         }
     }
-        
+        //sends the score over to the game over scene
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Game Over" {
             if let GameOver = segue.destination as? gameOverController {
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
                     }
         game()
                 }
-
+    //verifies if the game loaded correctly
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }

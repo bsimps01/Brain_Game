@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     var timer: Timer?
     var matching: Bool = true
     
+    
+    //checks the time in the game
     func runTimer() {
     Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
@@ -56,7 +58,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+    //checks the logic of colors selected
     func game(){
         let colorChoices = color()
         let textWord = colorChoices.textColor.randomElement()
@@ -67,44 +69,42 @@ class ViewController: UIViewController {
         colortextLabel.text = matchText
         colortextLabel.textColor = colorChoices.colors[matchColor!]
         
-        if matchText == matchColor && textWord == matchColor{
-            matching = true
+        if (textWord == matchColor) {
+            self.matching = true
             
-        } else {
-            matching = false
+        } else if (matchText != matchColor) {
+            self.matching = false
             
         }
         
-        if (score <= -10){
+        if (score <= -1){
             score = 0
-            performSegue(withIdentifier: "Game Over", sender: self)
+            self.performSegue(withIdentifier: "Game Over", sender: self)
         }
     }
         
-        
+        //confirms if the action is true
     @IBAction func yesButtonAction(_ sender: Any) {
-        if matching == true {
+        if (matching == true) {
             score += 10
             scoreLabel.text = "Score: \(score)"
-                game()
-        } else if matching == false {
+        } else {
             score -= 10
             scoreLabel.text = "Score: \(score)"
-                game()
             }
+        game()
         }
     
-
+    //confirms if any of the answers are not true
     @IBAction func noButtonTapped(_ sender: Any) {
-         if matching == true{
-            score += 10
-            scoreLabel.text = "Score: \(score)"
-                game()
-        } else if matching == false {
+         if (matching != true){
             score -= 10
             scoreLabel.text = "Score: \(score)"
-                game()
+        } else {
+            score += 10
+            scoreLabel.text = "Score: \(score)"
                     }
+        game()
                 }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -16,7 +16,18 @@
 		1B46769823A082BE00B9CCC7 /* rainbowbrainskull.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B46769723A082BE00B9CCC7 /* rainbowbrainskull.png */; };
 		1B847E5123A0E07F0031B7C1 /* Arrow_Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B847E5023A0E07F0031B7C1 /* Arrow_Left.png */; };
 		1B847E5323A10E320031B7C1 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B847E5223A10E320031B7C1 /* GameOver.swift */; };
+		1B847E6123A8633D0031B7C1 /* Brain_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B847E6023A8633D0031B7C1 /* Brain_GameUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B847E6323A8633D0031B7C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B467676239F82A700B9CCC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B46767D239F82A700B9CCC7;
+			remoteInfo = Brain_Game;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1B46767E239F82A700B9CCC7 /* Brain Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brain Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,10 +41,20 @@
 		1B46769723A082BE00B9CCC7 /* rainbowbrainskull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainbowbrainskull.png; sourceTree = "<group>"; };
 		1B847E5023A0E07F0031B7C1 /* Arrow_Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow_Left.png; sourceTree = "<group>"; };
 		1B847E5223A10E320031B7C1 /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		1B847E5E23A8633D0031B7C1 /* Brain GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brain GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B847E6023A8633D0031B7C1 /* Brain_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain_GameUITests.swift; sourceTree = "<group>"; };
+		1B847E6223A8633D0031B7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1B46767B239F82A700B9CCC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B847E5B23A8633D0031B7C1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				1B467680239F82A700B9CCC7 /* Brain_Game */,
+				1B847E5F23A8633D0031B7C1 /* Brain GameUITests */,
 				1B46767F239F82A700B9CCC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				1B46767E239F82A700B9CCC7 /* Brain Game.app */,
+				1B847E5E23A8633D0031B7C1 /* Brain GameUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +97,15 @@
 				1B46768F239F82AC00B9CCC7 /* Info.plist */,
 			);
 			path = Brain_Game;
+			sourceTree = "<group>";
+		};
+		1B847E5F23A8633D0031B7C1 /* Brain GameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1B847E6023A8633D0031B7C1 /* Brain_GameUITests.swift */,
+				1B847E6223A8633D0031B7C1 /* Info.plist */,
+			);
+			path = "Brain GameUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +128,24 @@
 			productReference = 1B46767E239F82A700B9CCC7 /* Brain Game.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1B847E5D23A8633D0031B7C1 /* Brain GameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B847E6523A8633D0031B7C1 /* Build configuration list for PBXNativeTarget "Brain GameUITests" */;
+			buildPhases = (
+				1B847E5A23A8633D0031B7C1 /* Sources */,
+				1B847E5B23A8633D0031B7C1 /* Frameworks */,
+				1B847E5C23A8633D0031B7C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B847E6423A8633D0031B7C1 /* PBXTargetDependency */,
+			);
+			name = "Brain GameUITests";
+			productName = "Brain GameUITests";
+			productReference = 1B847E5E23A8633D0031B7C1 /* Brain GameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +158,10 @@
 				TargetAttributes = {
 					1B46767D239F82A700B9CCC7 = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					1B847E5D23A8633D0031B7C1 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 1B46767D239F82A700B9CCC7;
 					};
 				};
 			};
@@ -125,6 +179,7 @@
 			projectRoot = "";
 			targets = (
 				1B46767D239F82A700B9CCC7 /* Brain_Game */,
+				1B847E5D23A8633D0031B7C1 /* Brain GameUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +197,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B847E5C23A8633D0031B7C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -156,7 +218,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B847E5A23A8633D0031B7C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B847E6123A8633D0031B7C1 /* Brain_GameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B847E6423A8633D0031B7C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B46767D239F82A700B9CCC7 /* Brain_Game */;
+			targetProxy = 1B847E6323A8633D0031B7C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1B467687239F82A700B9CCC7 /* Main.storyboard */ = {
@@ -328,6 +406,44 @@
 			};
 			name = Release;
 		};
+		1B847E6623A8633D0031B7C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4KT624V79W;
+				INFOPLIST_FILE = "Brain GameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Brain-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Brain_Game;
+			};
+			name = Debug;
+		};
+		1B847E6723A8633D0031B7C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4KT624V79W;
+				INFOPLIST_FILE = "Brain GameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Brain-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Brain_Game;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -345,6 +461,15 @@
 			buildConfigurations = (
 				1B467693239F82AC00B9CCC7 /* Debug */,
 				1B467694239F82AC00B9CCC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B847E6523A8633D0031B7C1 /* Build configuration list for PBXNativeTarget "Brain GameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B847E6623A8633D0031B7C1 /* Debug */,
+				1B847E6723A8633D0031B7C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

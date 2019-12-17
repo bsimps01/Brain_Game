@@ -14,6 +14,7 @@ class gameOverController: UIViewController {
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
+
     var highScore: Int = 0
     
     override func viewDidLoad() {
